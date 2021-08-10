@@ -1,0 +1,411 @@
+body{
+
+    margin:0;
+    font-family:'Give You Glory';
+
+}
+
+.container{
+    
+    position:absolute;
+    height:100%;
+    width:100%;
+    overflow:hidden;
+              
+}
+
+.main-background{
+
+    position:absolute;
+    width:100%;
+    height:100%;
+    margin:0;
+    background-image:url('../img/background_cardboard_desktop.jpg');
+    background-repeat:no-repeat;
+    background-position:right top;
+    background-size:cover;  
+    
+}
+
+.contact-picture{
+
+    position:absolute;
+    height:25%;
+    width:70%;
+    top:10%;
+    left:50%;
+    margin-left:-35%;
+    text-align:center;
+
+}
+
+.phone{
+
+
+    height:90%;
+   /* transform:translateY(0px);
+    transform-origin:50% 50%;
+    animation:ring 0.8s ease both 3;*/
+    animation: zoomInLeft 1s both;
+
+}
+
+
+  @keyframes zoomInLeft {
+  0% {
+  opacity: 0;
+  transform: scale3d(.1, .1, .1) translate3d(-1000px, 0, 0);
+  animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+  }
+  60% {
+  opacity: 1;
+  transform: scale3d(.475, .475, .475) translate3d(10px, 0, 0);
+  animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+  }
+  }
+
+/*@keyframes ring {
+
+    15%{
+      transform:rotate(20deg);
+    }
+    30% {
+      transform:rotate(-25deg);
+    }  
+    45% {
+      transform:rotate(20deg);
+    }  
+    60% {
+      transform:rotate(-25deg);
+    }  
+    75%{
+      transform:rotate(20deg);
+    }
+    90% {
+      transform:rotate(0deg);
+    }
+
+}*/
+    
+    
+/* Navigation*/
+
+.navigation{
+
+    position:absolute;
+    display:block;
+    -webkit-user-select:none;
+    user-select:none;
+    width:100%;
+    height:100%;
+    
+}
+
+.navigation > input:checked ~ ul, .navigation > input:checked ~ span{
+  
+    z-index:1;
+    
+}
+
+.navigation a{
+    
+    display:inline-block;
+    color:rgb(21, 153, 206);
+    text-decoration:none;
+    font-size:25px;
+    font-weight:bold;
+      
+}
+
+.navigation li:hover a{
+   
+    animation-name:zoomIn;
+    animation-duration:0.5s;
+    animation-fill-mode:both;
+
+}
+
+@keyframes zoomIn{
+
+    0%{
+    opacity:0;
+    transform:scale3d(.3, .3, .3);
+    font-size:25px;
+    }
+    100%{
+    opacity:1;
+    font-size:32px;
+    }
+
+}
+    
+.navigation > input{
+    
+    display:block;
+    width:40px;
+    height:32px;
+    position:absolute;
+    cursor:pointer;
+    opacity:0;
+    z-index:2;
+    top:3%;
+    left:4%;
+    -webkit-touch-callout:none;
+    margin-top:0;
+    margin-left:-4px;
+    
+}
+    
+.navigation span{
+      
+    display:block;
+    position:relative;
+    width:33px;
+    height:4px;
+    margin-bottom:5px;
+    background:rgb(21, 153, 206);
+    border-radius:3px;
+    top:3%;
+    left:4%;
+    transform-origin:3px 2px;
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                opacity 0.55s ease;   
+    
+}
+    
+.navigation > input:checked ~ span{
+    
+    transform:rotate(45deg) translate(-2px,-1px);
+    
+}
+    
+.navigation > input:checked ~ span:nth-of-type(2){
+
+    opacity:0;
+    transform:rotate(0deg) scale(0.2, 0.2);
+
+}
+    
+.navigation > input:checked ~ span:last-of-type{
+    
+    transform:rotate(-45deg) translate(-0, -1px);
+    
+}
+    
+.navigation > ul{
+    
+    display:block;
+    position:absolute;
+    list-style-type:none;
+    width:100%;
+    height:100%;
+    margin:-100px 0 0 -20px;
+    padding-left:70px;
+    padding-top:170px;  
+    background:#ededed;
+    -webkit-font-smoothing:antialiased;
+    /* to stop flickering of text in safari */
+    transform-origin:0% 0%;
+    transform:translate(-150%, 0%);
+    transition:transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+      
+}
+    
+.navigation li{
+    
+    height:10%;
+    box-sizing:border-box;
+         
+}
+        
+.navigation input:checked ~ ul{
+
+    transform:none;
+
+}
+
+.text-field{
+
+    position:absolute;
+    top:35%;
+    width:308px;
+    text-align:center;
+    right:50%;
+    margin-right:-154px;
+
+}
+  
+.titel-field{
+     
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+    margin-bottom:15px;
+    font-size:30px;
+    line-height:15px;
+
+}
+    
+.titel-field > div:first-of-type{
+  
+    font-size:70px;
+    line-height:60px;
+    font-family:'Nanum Gothic', sans-serif;
+    font-weight:bold;
+    color:#f1be16;
+    animation:bounce 1.2s .3s both;
+  
+} 
+
+
+@keyframes bounce{
+    
+    0%{
+        
+    opacity: 0;
+        
+    }
+
+    1%, 20%, 53%, 80%, 100% {
+    transition-timing-function:cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    transform:translate3d(0,-0px,0);
+    }
+    1%, 30%, 43% {
+    transition-timing-function:cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    transform:translate3d(0, -150px, 0);
+    opacity:0;
+    }
+    70% {
+    transition-timing-function:cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    transform:translate3d(0, -50px, 0);
+    }
+    90% { 
+    transform:translate3d(0,-20px,0);
+    }
+
+}
+
+.main-text > p:first-of-type{
+
+    font-size:16px;
+    font-family:'Give You Glory';
+
+}
+  
+.main-text > p:nth-of-type(2){
+  
+    font-size:17px;
+    font-family:'Nanum Gothic', sans-serif;
+    line-height:25px;
+  
+}
+  
+.main-text > p:nth-of-type(2) > b{
+
+    font-family:'Give You Glory';
+    font-size:20px;
+
+}
+
+.main-text  p  a{
+   
+    color:black;
+}
+ 
+
+@media only screen and (min-width:1050px){
+
+  .navigation{
+
+    display:flex;
+    justify-content:center;
+    top:6%;
+    left:3%;
+     
+  }
+
+  .navigation > input, .navigation span{
+
+    display:none;
+
+  }
+
+  .navigation li{
+      
+    width:9em;
+    padding:0px;
+    
+  }
+
+  .navigation > ul{
+      
+    display:flex;
+    margin:0;
+    padding:0;
+    background:transparent;
+    transform:none;
+    
+  }
+
+  .text-field{
+
+    top:27%;
+    right:10%;
+    margin-right:0;
+    width:40%;
+    text-align:left;
+  }
+  
+  .titel-field{
+
+    margin-bottom:40px;
+    font-size:60px;
+    line-height:25px;
+    justify-content:left;
+
+  }
+  
+  .titel-field > div:first-of-type{
+
+    font-size:110px;
+    line-height:90px;
+
+  }
+
+  .main-text > p:first-of-type{
+
+    font-size:18px;
+
+  }
+
+  .main-text > p:nth-of-type(2){
+
+    font-size:18px;
+    line-height:30px;
+
+  }
+
+  .main-text > p:nth-of-type(2) > b{
+
+    font-size:18px;
+
+  }
+
+  .contact-picture{
+  
+    height:38%;
+    width:auto;
+    top:27%;
+    left:13%;
+    margin-left:0;
+    text-align:right;
+
+  }
+    
+  .phone{
+        
+     height: 100%;
+        
+ }
+
+}

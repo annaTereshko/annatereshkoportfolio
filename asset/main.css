@@ -1,0 +1,302 @@
+body{
+
+    margin:0;
+    font-family: 'Give You Glory';
+}
+.container{
+
+    position:absolute;
+    height:100%;
+    width:100%;
+    overflow: hidden;
+   
+}
+.index-background{
+
+    position: absolute;
+    width:100%;
+    height:100%;
+    margin:0;
+    background-image:url('../img/home_background_desktop.jpg');
+    background-repeat:no-repeat;
+    background-position:right top;
+    background-size:cover;
+  
+}
+
+.overlay{
+
+    position:absolute;
+    background-color:rgba(0, 0, 0, 0.5);
+    height:100%;
+    width:100%;
+  
+}
+
+.home-text{
+
+    position:absolute;
+    right:50%;
+    margin-right:-135px;
+    color:rgba(255, 255, 255, 0.808);
+    top:25%;
+    text-align:center; 
+   
+}
+
+#part_1{
+
+    font-size: 38px;
+    line-height:80px;
+    letter-spacing:15px;
+    font-weight:bold;
+}
+#part_2, #part_3{
+
+    font-size:18px;
+    font-style:italic;
+
+}
+
+.index-cta{
+
+    background:rgb(21, 153, 206);
+    height:40px;
+    width:200px;
+    font-size:20px;
+    border:none;
+    margin-top:27px;
+
+}
+
+.index-cta a{
+
+    color:rgba(255, 255, 255, 0.808);
+    text-decoration:none;
+    font-family:'Give You Glory', cursive;
+  
+}
+
+.index-cta:hover{
+
+    background:transparent;
+    border:1.5px solid rgb(21, 153, 206);
+
+}
+
+.index-cta:hover a{
+
+    color:rgb(21, 153, 206);
+
+}
+
+
+
+/* Navigation*/
+
+.navigation{
+
+    position:absolute;
+    display:block;
+    -webkit-user-select:none;
+    user-select:none;
+    width:100%;
+    height:100%;
+  
+}
+
+  
+.navigation > input:checked ~ ul, .navigation > input:checked ~ span{
+  
+    z-index:1;
+  
+}
+
+.navigation a{
+  
+    display:inline-block;
+    color:rgb(21, 153, 206);
+    text-decoration:none;
+    font-size:25px;
+    font-weight:bold;
+    
+}
+
+.navigation li:hover a{
+ 
+    animation-name:zoomIn;
+    animation-duration:0.5s;
+    animation-fill-mode:both;
+      
+}
+
+@keyframes zoomIn {
+
+    0% {
+    opacity:0;
+    transform:scale3d(.3, .3, .3);
+    font-size:25px;
+    }
+    100% {
+    opacity:1;
+    font-size:32px;
+    }
+} 
+  
+.navigation > input{
+  
+    display:block;
+    width:40px;
+    height:32px;
+    position:absolute;
+    cursor:pointer;
+    opacity:0;
+    z-index:2;
+    -webkit-touch-callout:none;
+    top:3%;
+    left:4%;
+    margin-top:0;
+    margin-left:-4px;
+ 
+}
+  
+.navigation span{
+    
+    display:block;
+    position:relative;
+    top:3%;
+    left:4%;
+    width:33px;
+    height:4px;
+    margin-bottom:5px;
+    background:rgb(250, 213, 7);
+    border-radius:3px;
+    transform-origin:3px 2px;
+    transition:transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                opacity 0.55s ease;
+   
+}
+  
+.navigation > input:checked ~ span{
+  
+    transform:rotate(45deg) translate(-2px,-1px);
+  
+}
+  
+.navigation > input:checked ~ span:nth-of-type(2){
+
+    opacity:0;
+    transform:rotate(0deg) scale(0.2, 0.2);
+}
+  
+.navigation > input:checked ~ span:last-of-type{
+  
+    transform:rotate(-45deg) translate(-0, -1px);
+  
+}
+  
+.navigation > ul{
+  
+    display:block;
+    position:absolute;
+    list-style-type:none;
+    width:100%;
+    height:100%;
+    margin:-100px 0 0 -20px;
+    padding-left:70px;
+    padding-top:170px; 
+    background:#ededed;
+    -webkit-font-smoothing:antialiased;
+    /* to stop flickering of text in safari */
+    transform-origin:0% 0%;
+    transform:translate(-150%, 0%);
+    transition:transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    
+}
+  
+.navigation li{
+  
+    height:10%;
+    box-sizing:border-box;
+     
+}
+      
+.navigation input:checked ~ ul{
+
+    transform:none;
+}
+  
+@media only screen and (min-width:1050px){
+  
+  .navigation{
+  
+      display:flex;
+      justify-content:center;
+      top:6%;
+      left:3%;
+       
+  }
+
+  .navigation a{
+ 
+      color:rgb(250, 213, 7);
+      font-weight:normal;
+      
+  }
+  
+  .navigation > input, .navigation span{
+  
+      display:none;
+  
+  }
+  
+  .navigation li{
+      
+      width:9em;
+      padding:0px;
+     
+  }
+  
+  .navigation > ul{
+      
+      display:flex;
+      margin:0;
+      padding:0;
+      background:transparent;
+      transform:none;
+     
+  }
+
+  .home-text{
+
+      right:10%;   
+      margin-right:0;
+   
+  }
+
+  #part_1{
+
+      font-size:80px;
+      line-height:100px;
+
+  }
+
+  #part_2, #part_3{
+
+      font-size:25px;
+
+  }
+
+  .index-cta{
+
+     width:200px;
+  
+  }
+  
+  
+}
+
+
+
+ 
+
